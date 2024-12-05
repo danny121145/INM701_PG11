@@ -23,5 +23,4 @@ for feature, ax in zip(categorical_features, axes.flatten()):
     ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
 plt.tight_layout(pad=1.08, h_pad=None, w_pad=None, rect=None)
-# %%
 plt.show()
