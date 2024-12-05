@@ -24,3 +24,22 @@ for feature, ax in zip(categorical_features, axes.flatten()):
 
 plt.tight_layout(pad=1.08, h_pad=None, w_pad=None, rect=None)
 plt.show()
+
+correlation_matrix = dataset[numerical_features].corr()
+
+plt.figure(figsize=(10, 8))
+plt.imshow(correlation_matrix, cmap='coolwarm', interpolation='nearest')
+plt.colorbar()
+plt.xticks(range(len(numerical_features)), numerical_features, rotation=90)
+plt.yticks(range(len(numerical_features)), numerical_features)
+plt.title('Correlation Matrix of Numerical Features', fontsize=14)
+plt.show()
+
+# 4. Scatter plot: Study Hours vs. Depression with colors for Depression status
+plt.figure(figsize=(8, 6))
+colors = dataset['Depression'].map({'Yes': 'red', 'No': 'blue'})
+plt.scatter(dataset['Study Hours'], dataset['Academic Pressure'], c=colors, alpha=0.6, edgecolor='k')
+plt.xlabel('Study Hours')
+plt.ylabel('Academic Pressure')
+plt.title('Study Hours vs. Academic Pressure (Colored by Depression)')
+plt.show()
