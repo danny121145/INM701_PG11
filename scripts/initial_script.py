@@ -35,7 +35,6 @@ plt.yticks(range(len(numerical_features)), numerical_features)
 plt.title('Correlation Matrix of Numerical Features', fontsize=14)
 plt.show()
 
-# 4. Scatter plot: Study Hours vs. Depression with colors for Depression status
 plt.figure(figsize=(8, 6))
 colors = dataset['Depression'].map({'Yes': 'red', 'No': 'blue'})
 plt.scatter(dataset['Study Hours'], dataset['Academic Pressure'], c=colors, alpha=0.6, edgecolor='k')
